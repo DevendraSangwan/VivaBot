@@ -29,8 +29,7 @@ import {
 } from 'lucide-react';
 
 const TOTAL_QUESTIONS = 5;
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-
+const API_BASE = import.meta.env.VITE_API_URL || 'https://vivabot-backend-naup.onrender.com';
 function ScoreRing({ percentage, label, strokeColor }) {
   const radius = 36;
   const circumference = 2 * Math.PI * radius;
