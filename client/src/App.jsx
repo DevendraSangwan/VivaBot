@@ -118,7 +118,7 @@ export default function App() {
     setKeyError('');
 
     try {
-      await axios.post('http://localhost:5000/api/verify-key', {
+      await axios.post('https://vivabot-backend-naup.onrender.com/api/verify-key', {
         userApiKey: cleaned,
       });
       setUserApiKey(cleaned);
@@ -210,7 +210,7 @@ export default function App() {
     setError('');
 
     try {
-      const res = await axios.post('http://localhost:5000/api/upload', formData, {
+      const res = await axios.post('https://vivabot-backend-naup.onrender.com/api/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setParsedData(res.data);
@@ -235,7 +235,7 @@ export default function App() {
     setError('');
 
     try {
-      const res = await axios.post('http://localhost:5000/api/viva', {
+      const res = await axios.post('https://vivabot-backend-naup.onrender.com/api/viva', {
         extractedText: parsedData.extractedText,
         persona,
         chatHistory: [],
@@ -258,7 +258,7 @@ export default function App() {
     setIsSpeaking(false);
     setEvaluating(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/evaluate', {
+      const res = await axios.post('https://vivabot-backend-naup.onrender.com/api/evaluate', {
         extractedText: parsedData.extractedText,
         chatHistory: finalHistory,
         persona,
@@ -294,7 +294,7 @@ export default function App() {
     setAiThinking(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/viva', {
+      const res = await axios.post('https://vivabot-backend-naup.onrender.com/api/viva', {
         extractedText: parsedData.extractedText,
         persona,
         chatHistory: updatedHistory,
